@@ -1,18 +1,250 @@
-<!-- <div class="container" style="background-color: yellow;">
-    <div class="jumbotron">
-      <h1 style="text-align: center;">Notification Centre</h1>
-  </div>
-</div> -->
-
-<div class="jumbotron" style="height: 10px;">
-    <h1 style="text-align: center;">Notification Centre</h1>
+<div class="jumbotron text-center">
+    <h1>Notification Center</h1>
 </div>
 
-<!-- <div class="container">
-<div (click)="showHide($event.target.id)" id="class1">Class 1</div>
-<div id="class1" [ng-hide]="hide">
-    <div>Class 1.1</div>
-    <div>Class 1.2</div>
-    <div>Class 1.3</div>
+<div class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Attendance</a></li>
+                <li><a href="#">Details</a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="well no-padding">
+                            <div>
+                                <ul class="nav nav-list nav-menu-list-style">
+                                    <li>
+                                        <label class="tree-toggle nav-header glyphicon-icon-rpad"><span class="glyphicon glyphicon-folder-close m5"></span>Bootstrap
+                                            <span class="menu-collapsible-icon glyphicon glyphicon-chevron-down"></span></label>
+                                        <ul class="nav nav-list tree bullets">
+                                            <li><a href="#">JavaScript</a></li>
+                                            <li><a href="#">CSS <span class="badge">42</span></a></li>
+                                            <li>
+                                                <label class="tree-toggle nav-header">Buttons</label>
+                                                <ul class="nav nav-list tree">
+                                                    <li><a href="#">Colors</a></li>
+                                                    <li><a href="#">Sizes</a></li>
+                                                    <li>
+                                                        <label class="tree-toggle nav-header">Forms</label>
+                                                        <ul class="nav nav-list tree">
+                                                            <li><a href="#">Horizontal</a></li>
+                                                            <li><a href="#">Vertical</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <label class="tree-toggle nav-header">Responsive</label>
+                                        <ul class="nav nav-list tree">
+                                            <li><a href="#">Overview</a></li>
+                                            <li><a href="#">CSS</a></li>
+                                            <li>
+                                                <label class="tree-toggle nav-header">Media Queries</label>
+                                                <ul class="nav nav-list tree">
+                                                    <li><a href="#">Text</a></li>
+                                                    <li><a href="#">Images</a></li>
+                                                    <li>
+                                                        <label class="tree-toggle nav-header">Mobile Devices</label>
+                                                        <ul class="nav nav-list tree">
+                                                            <li><a href="#">iPhone</a></li>
+                                                            <li><a href="#">Samsung</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <label class="tree-toggle nav-header">Coding</label>
+                                                <ul class="nav nav-list tree">
+                                                    <li><a href="#">JavaScript</a></li>
+                                                    <li><a href="#">jQuery</a></li>
+                                                    <li>
+                                                        <label class="tree-toggle nav-header">HTML DOM</label>
+                                                        <ul class="nav nav-list tree">
+                                                            <li><a href="#">DOM Elements</a></li>
+                                                            <li><a href="#">Recursive</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+        
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-1">
+                    <button class="btn btn-danger navbar-btn pull-right"  onclick="openNotify()">Notify</button>
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn btn-danger navbar-btn pull-right">Add</button>
+                </div>
+            </div>
+            <div class="table-responsive text-nowrap">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Kate</td>
+                            <td><button class="btn btn-danger navbar-btn" onclick="openNotify()">Notify</button></td>
+                            
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Anna</td>
+                            <td><button class="btn btn-danger navbar-btn" onclick="openNotify()">Notify</button></td>
+                            
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Tom</td>
+                            <td><button class="btn btn-danger navbar-btn" onclick="openNotify()">Notify</button></td>
+                            
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Jerry</td>
+                            <td><button class="btn btn-danger navbar-btn" onclick="openNotify()">Notify</button></td>
+                            
+                        </tr>
+                        
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
-</div> -->
+
+
+<div class="container">
+    <!--  Attendance Modal -->
+   <div class="modal fade" id="my-modal" role="dialog">
+     <div class="modal-dialog modal-lg">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" onclick="closeModal()">&times;</button>
+           <h4 class="modal-title">Students on leave Header</h4>
+         </div>
+         <div class="modal-body">
+          <ul id="assetNameMenu"></ul>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default" onclick="closeModal()" >Close</button>
+           <button type="button" class="btn btn-default" onclick="closeModal()" >Send</button>
+         </div>
+       </div>
+     </div>
+   </div>
+</div>
+ 
+<!-- Notify Modal -->
+<div class="container">
+    <div class="modal fade" id="notify-modal" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" onclick="closeNotify()">&times;</button>
+                    <h4 class="modal-title">Notify</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group shadow-textarea">
+                        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-danger" onclick="closeNotify()" >Close</button>
+                    <button type="button" class="btn btn-default btn-success" onclick="closeNotify()" >Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+    $('.tree-toggle').click(function() {
+        $(this).parent().children('ul.tree').toggle(200);
+    });
+    $(function() {
+        $('.tree-toggle').parent().children('ul.tree').toggle(200);
+    })
+</script>
+<script>
+    function openModal(){
+        console.log("here iasda m");
+        $('#my-modal').modal();
+        
+        var assetList = $('#assetNameMenu')
+            assetList.html("");
+        $.each(countries, function(i)
+        {
+            var li = $('<li/>')
+                .addClass('ui-menu-item')
+                .attr('role', 'menuitem')
+                .appendTo(assetList);
+            
+            
+          
+           var aaa = $('<a>')
+                .addClass('ui-all')
+                .appendTo(li);
+          
+          var input = $('<input/>')
+                .addClass('ui-all')
+                .attr('type', 'checkbox')
+                .appendTo(aaa);
+                 
+          
+          var aaaa = $('<span>')
+                .text(countries[i])
+                .appendTo(aaa);
+
+        });
+        
+    }  
+
+    function closeModal(){
+        $('#my-modal').modal('hide');
+    } 
+
+    var countries = ['Student 1', 'Student 2', 'Student 3', 'Student 4'];
+     
+    function openNotify() {
+        $('#notify-modal').modal();
+    }
+
+    function closeNotify() {
+        $('#notify-modal').modal('hide');
+    }
+        
+        
+</script>
+
