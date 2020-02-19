@@ -9,6 +9,9 @@ import { NoticeBoardComponent } from './notice-board/notice-board.component';
 import { GuestLectureComponent } from './guest-lecture/guest-lecture.component';
 import { VideoCallingComponent } from './video-calling/video-calling.component';
 import {WebcamModule} from 'ngx-webcam';
+import {ModalService} from './services/modal-service'
+import { ModalComponent } from './directive/modal.component';
+import { FormsModule }    from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,15 +19,17 @@ import {WebcamModule} from 'ngx-webcam';
     HomeComponent,
     NoticeBoardComponent,
     GuestLectureComponent,
-    VideoCallingComponent
+    VideoCallingComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     CommonModule,
     WebcamModule
   ],
-  providers: [],
+  providers: [ModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
