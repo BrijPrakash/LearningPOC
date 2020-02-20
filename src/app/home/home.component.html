@@ -1,34 +1,38 @@
-<img src="../../assets/image/image01.png" width="60%" style="float:left;">
+<div class="limiter">
+    <div class="container-login100">
+        <div class="login100-more" style="background-image: url('../../assets/image/bg-01.jpg');"></div>
+        <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50" style="background-image: url('images/slider_background.jpg');">
+            <form class="homediv">
+                <div>
+                        <div class="logo">
+                                <img src="../../assets/image/logo.png" alt="">
+                            <span id="logotext"> Let's do it</span>
+                        </div>
+                        
 
-<div class="row">
-    <div class="col">
-        <img src="../../assets/image/pen-icon.png" style="float: left; height: 174px;">
-    </div>
-    <div class="col">
-        <h2 style="margin: 64px -56px;">Lets Do It</h2>
-    </div>
-</div>
+                        <div class="hometabs" >
+                            <ul>
+                            <li [routerLink]="['/guest-lecture']">
+                                <div class="hero_box d-flex flex-row align-items-center justify-content-start">
 
-<div class="list-group" >
-    <a  [routerLink]="['/guest-lecture']" class="list-group-item list-group-item-action" style="border: 0px;">
-        <div class="row">
-            <div class="col">
-                <img src="../../assets/image/guest-lecture.png" style=" margin: 8px 33px;float: left; height: 74px;">
-            </div>
-            <div class="col">
-                <h2 style="margin: 23px -56px;">Guest Lecture</h2>
-            </div>
+                                <img src="../../assets/image/professor.svg" class="svg" alt="">
+                                <span class="logo-text" href="">Guest Lecture</span>
+                                </div>
+                            </li>
+                                
+                            <li [routerLink]="['/notice-board']">
+                                <div class="hero_box d-flex flex-row align-items-center justify-content-start">
+                                <img src="../../assets/image/books.svg" class="svg" alt="">
+                                <span class="logo-text" href="">Notice Board</span>
+                                </div>
+                            </li>
+                                
+                            </ul>
+
+                        </div>
+                </div>
+            </form>
         </div>
-      </a>
-      <a  [routerLink]="['/notice-board']" class="list-group-item list-group-item-action" style="border: 0px;">
-        <div class="row">
-            <div class="col">
-                <img src="../../assets/image/notice-board.png" style="margin: 47px;float: left; height: 60px;">
-            </div>
-            <div class="col">
-                <h2 style="margin: 64px -56px;">Notice Board</h2>
-            </div>
-        </div>
-      </a>
+    </div>
 </div>
 
