@@ -29,3 +29,6 @@ body.modal-open {
     overflow: hidden;
 }
 
+.meeting {
+    margin-top: 10px;
+}
