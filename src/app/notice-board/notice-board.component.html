@@ -19,8 +19,8 @@
                             <div>
                                 <ul class="nav nav-list nav-menu-list-style">
                                     <li>
-                                        <label class="tree-toggle nav-header glyphicon-icon-rpad"><span class="glyphicon glyphicon-folder-close m5"></span>
-                                            All Classes</label>
+                                        <label class="tree-toggle nav-header glyphicon-icon-rpad"><a class="item" (click)="updateTable()"><span class="glyphicon glyphicon-folder-close m5"></span>
+                                            All Classes</a></label>
                                     </li>
                                     <li *ngFor="let item of details">
                                         <label class="tree-toggle nav-header glyphicon-icon-rpad">
@@ -36,6 +36,36 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-1">
+                    <button class="btn btn-danger navbar-btn pull-right"  onclick="openNotify()">Notify</button>
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn btn-danger navbar-btn pull-right">Add</button>
+                </div>
+            </div>
+            <div class="table-responsive text-nowrap">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let section of tableData">
+                            <th scope="row">{{section.id}}</th>
+                            <td>{{section.name}}</td>
+                            <td><button class="btn btn-danger navbar-btn" onclick="openNotify()">Notify</button></td>
+                        </tr>
+                    </tbody>
+
+                </table>
             </div>
         </div>
     </div>

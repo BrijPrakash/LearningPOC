@@ -158,7 +158,11 @@ export class NoticeBoardComponent implements OnInit, AfterViewInit {
     this.hide = false;
   }
   updateTable(item) {
-    this.tableData = item;
+    if(item == null) {
+      this.tableData = this.details;
+    } else {
+      this.tableData = item;
+    }
   }
 
   ngAfterViewInit(): void {
