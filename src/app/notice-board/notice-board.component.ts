@@ -6,9 +6,149 @@ import * as $ from 'jquery'
   styleUrls: ['./notice-board.component.css']
 })
 export class NoticeBoardComponent implements OnInit, AfterViewInit {
-
+  
+  details = [
+    {
+      "id": 1,
+      "name": "class 1",
+      "sections": [{
+        "id": 1,
+        "name": "class 1 A",
+        "students": [{
+          "id": 1,
+          "name": "Kate"
+        },{
+          "id": 2,
+          "name": "Anna"
+        },{
+          "id": 3,
+          "name": "Tom"
+        },{
+          "id": 4,
+          "name": "Jerry"
+        }]
+      },{
+        "id": 2,
+        "name": "class 1 B",
+        "students": [{
+          "id": 1,
+          "name": "Kate"
+        },{
+          "id": 2,
+          "name": "Anna"
+        },{
+          "id": 3,
+          "name": "Tom"
+        },{
+          "id": 4,
+          "name": "Jerry"
+        }]
+      },{
+        "id": 3,
+        "name": "class 1 c",
+        "students": [{
+          "id": 1,
+          "name": "Kate"
+        },{
+          "id": 2,
+          "name": "Anna"
+        },{
+          "id": 3,
+          "name": "Tom"
+        },{
+          "id": 4,
+          "name": "Jerry"
+        }]
+      },{
+        "id": 4,
+        "name": "class 1 D",
+        "students": [{
+          "id": 1,
+          "name": "Kate"
+        },{
+          "id": 2,
+          "name": "Anna"
+        },{
+          "id": 3,
+          "name": "Tom"
+        },{
+          "id": 4,
+          "name": "Jerry"
+        }]
+      }]
+    },{
+      "id": 2,
+      "name": "class 2",
+      "sections": [{
+        "id": 1,
+        "name": "class 2 A",
+        "students": [{
+          "id": 1,
+          "name": "Kate"
+        },{
+          "id": 2,
+          "name": "Anna"
+        },{
+          "id": 3,
+          "name": "Tom"
+        },{
+          "id": 4,
+          "name": "Jerry"
+        }]
+      },{
+        "id": 2,
+        "name": "class 2 B",
+        "students": [{
+          "id": 1,
+          "name": "Kate"
+        },{
+          "id": 2,
+          "name": "Anna"
+        },{
+          "id": 3,
+          "name": "Tom"
+        },{
+          "id": 4,
+          "name": "Jerry"
+        }]
+      },{
+        "id": 3,
+        "name": "class 2 c",
+        "students": [{
+          "id": 1,
+          "name": "Kate"
+        },{
+          "id": 2,
+          "name": "Anna"
+        },{
+          "id": 3,
+          "name": "Tom"
+        },{
+          "id": 4,
+          "name": "Jerry"
+        }]
+      },{
+        "id": 4,
+        "name": "class 2 D",
+        "students": [{
+          "id": 1,
+          "name": "Kate"
+        },{
+          "id": 2,
+          "name": "Anna"
+        },{
+          "id": 3,
+          "name": "Tom"
+        },{
+          "id": 4,
+          "name": "Jerry"
+        }]
+      }]
+    }];
+  tableData = [];
   hide = true;
   constructor() {
+    this.tableData = this.details;
   }
 
   ngOnInit() {
@@ -16,6 +156,9 @@ export class NoticeBoardComponent implements OnInit, AfterViewInit {
 
   showHide(el) {
     this.hide = false;
+  }
+  updateTable(item) {
+    this.tableData = item;
   }
 
   ngAfterViewInit(): void {

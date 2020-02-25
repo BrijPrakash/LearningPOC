@@ -6,10 +6,8 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Attendance</a></li>
-                <li><a href="#">Details</a></li>
+                <li class="active">Class Information</li>
             </ul>
-
         </div>
     </nav>
     <div class="row">
@@ -21,61 +19,15 @@
                             <div>
                                 <ul class="nav nav-list nav-menu-list-style">
                                     <li>
-                                        <label class="tree-toggle nav-header glyphicon-icon-rpad"><span class="glyphicon glyphicon-folder-close m5"></span>Bootstrap
-                                            <span class="menu-collapsible-icon glyphicon glyphicon-chevron-down"></span></label>
-                                        <ul class="nav nav-list tree bullets">
-                                            <li><a href="#">JavaScript</a></li>
-                                            <li><a href="#">CSS <span class="badge">42</span></a></li>
-                                            <li>
-                                                <label class="tree-toggle nav-header">Buttons</label>
-                                                <ul class="nav nav-list tree">
-                                                    <li><a href="#">Colors</a></li>
-                                                    <li><a href="#">Sizes</a></li>
-                                                    <li>
-                                                        <label class="tree-toggle nav-header">Forms</label>
-                                                        <ul class="nav nav-list tree">
-                                                            <li><a href="#">Horizontal</a></li>
-                                                            <li><a href="#">Vertical</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                        <label class="tree-toggle nav-header glyphicon-icon-rpad"><span class="glyphicon glyphicon-folder-close m5"></span>
+                                            All Classes</label>
                                     </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <label class="tree-toggle nav-header">Responsive</label>
-                                        <ul class="nav nav-list tree">
-                                            <li><a href="#">Overview</a></li>
-                                            <li><a href="#">CSS</a></li>
-                                            <li>
-                                                <label class="tree-toggle nav-header">Media Queries</label>
-                                                <ul class="nav nav-list tree">
-                                                    <li><a href="#">Text</a></li>
-                                                    <li><a href="#">Images</a></li>
-                                                    <li>
-                                                        <label class="tree-toggle nav-header">Mobile Devices</label>
-                                                        <ul class="nav nav-list tree">
-                                                            <li><a href="#">iPhone</a></li>
-                                                            <li><a href="#">Samsung</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <label class="tree-toggle nav-header">Coding</label>
-                                                <ul class="nav nav-list tree">
-                                                    <li><a href="#">JavaScript</a></li>
-                                                    <li><a href="#">jQuery</a></li>
-                                                    <li>
-                                                        <label class="tree-toggle nav-header">HTML DOM</label>
-                                                        <ul class="nav nav-list tree">
-                                                            <li><a href="#">DOM Elements</a></li>
-                                                            <li><a href="#">Recursive</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
+                                    <li *ngFor="let item of details">
+                                        <label class="tree-toggle nav-header glyphicon-icon-rpad">
+                                            <a class="item" (click)="updateTable(item.sections)"><span class="glyphicon glyphicon-folder-close m5"></span>{{item.name}}</a>
+                                            <span class="menu-collapsible-icon glyphicon glyphicon-chevron-down"></span></label>
+                                        <ul class="nav nav-list tree bullets" *ngFor="let section of item.sections">
+                                            <li (click)="updateTable(section.students)"><a class="item">&emsp;{{section.name}}</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -84,56 +36,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-    
-        
-        <div class="col-sm-8">
-            <div class="row">
-                <div class="col-sm-1">
-                    <button class="btn btn-danger navbar-btn pull-right"  onclick="openNotify()">Notify</button>
-                </div>
-                <div class="col-sm-1">
-                    <button class="btn btn-danger navbar-btn pull-right">Add</button>
-                </div>
-            </div>
-            <div class="table-responsive text-nowrap">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Kate</td>
-                            <td><button class="btn btn-danger navbar-btn" onclick="openNotify()">Notify</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Anna</td>
-                            <td><button class="btn btn-danger navbar-btn" onclick="openNotify()">Notify</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Tom</td>
-                            <td><button class="btn btn-danger navbar-btn" onclick="openNotify()">Notify</button></td>
-                            
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Jerry</td>
-                            <td><button class="btn btn-danger navbar-btn" onclick="openNotify()">Notify</button></td>
-                            
-                        </tr>
-                        
-                    </tbody>
-
-                </table>
             </div>
         </div>
     </div>
@@ -184,9 +86,6 @@
     </div>
 </div>
 
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script>
     
 </script>

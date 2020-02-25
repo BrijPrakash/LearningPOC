@@ -110,3 +110,10 @@ ul.kas-icon-aero li a:before {
     content: "\e258";
     padding-right: 8px;
 }
+
+.item {
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    border-bottom: none !important;
+}
