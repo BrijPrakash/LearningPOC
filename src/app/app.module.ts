@@ -12,6 +12,8 @@ import {WebcamModule} from 'ngx-webcam';
 import {ModalService} from './services/modal-service'
 import { ModalComponent } from './directive/modal.component';
 import { FormsModule }    from '@angular/forms';
+import { NotifyModalComponent } from './notify-modal/notify-modal.component';
+import { VideoStreamingComponent } from './video-streaming/video-streaming.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule }    from '@angular/forms';
     NoticeBoardComponent,
     GuestLectureComponent,
     VideoCallingComponent,
-    ModalComponent
+    ModalComponent,
+    NotifyModalComponent,
+    VideoStreamingComponent
   ],
   imports: [
     BrowserModule,

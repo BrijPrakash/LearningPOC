@@ -94,7 +94,7 @@
 </div>
  
 <!-- Notify Modal -->
-<div class="container">
+<!-- <div class="container">
     <div class="modal fade" id="notify-modal" role="dialog">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
@@ -114,7 +114,21 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+
+
+<modal id="notify-modal">
+    <div class="modal">
+        <div class="modal-body" style="width: 683px;height: 547px; margin:30px 250px">
+            <app-notify-modal *ngIf=showWebCam></app-notify-modal>
+            <button type="button" style ="margin:0px 280px"
+            (click)="closeModal('notify-modal');"
+            class="btn btn-danger">End Call</button>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
 
 <script>
     
