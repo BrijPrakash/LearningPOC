@@ -1,7 +1,23 @@
-<h1>My id - {{mypeerid}} </h1>
-
-<input type="text" [(ngModel)]="anotherId">
+<h2 align="center">Connection Id - {{mypeerid}}</h2>
+<div class="form-inline">
+    <div class="form-group">
+        <input type="text" [(ngModel)]="anotherId" class="form-control" placeholder="Another Connection Id">
+    </div>
+    <button class="btn btn-primary" (click)="connect()">Connect</button>
+</div>
+<!-- 
+<input class type="text" >
 <button (click)="connect()">Connect</button>
-<button (click)="videoConnect()">Video Connect</button>
-<br />
-<video #myvideo></video>
+<button (click)="videoConnect()">Video Connect</button> -->
+
+<div class="row" style="background-color: aqua;">
+
+    <div class="col-md-8">
+        <video #myvideo></video>
+        <button class="btn btn-success" (click)="videoConnect()">Start</button>
+        <button class="btn btn-danger" (click)="stopVideo()">Stop</button>
+    </div>
+    <div class="col-md-4">
+        chat box
+    </div>
+</div>

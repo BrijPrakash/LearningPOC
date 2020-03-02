@@ -33,6 +33,10 @@ export class VideoStreamingComponent implements OnInit {
       });
     });
 
+    this.peer.on("error", function(err) {
+      console.log("An Error has occured: " + err);
+    });
+
     var n = <any>navigator;
     
     n.getUserMedia =  ( n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia || n.msGetUserMedia );
@@ -49,7 +53,6 @@ export class VideoStreamingComponent implements OnInit {
         console.log('Failed to get stream', err);
       })
     })
-
   }
 
   connect() {
@@ -73,15 +76,24 @@ export class VideoStreamingComponent implements OnInit {
     
     n.getUserMedia({video: true, audio: true}, function(stream) {
       var call = localvar.call(fname, stream);
-      call.on('stream', function(remotestream) {
-        video.srcObject = remotestream;
-        video.play();
-      })
+      // call.on('stream', function(remotestream) {
+      //   video.srcObject = remotestream;
+      //   video.play();
+      // })
     }, function(err){
       console.log('Failed to get stream', err);
     })
+  }
 
-
+  stopVideo() {
+    var n = <any>navigator;
+    n.getUserMedia = ( n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia  || n.msGetUserMedia );
+    n.getUserMedia({video: true, audio: true}, function(stream) {
+      
+      stream.stop()
+    }, function(err){
+      console.log('Failed to get stream', err);
+    })
   }
 
 }
