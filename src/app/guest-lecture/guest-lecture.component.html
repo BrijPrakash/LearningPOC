@@ -25,6 +25,11 @@
          <button (click)="openModal('custom-modal-1')" 
          class="btn btn-primary" style="margin: 12px;">start Conference</button>
     </div>
+
+    <div class="col-6 text-center" style="margin: 0px 0px 0px 328px;">
+        <a  href="javascript:void(0)"
+         (click)="openModal('custom-modal-2')">Register for Guest Lecture</a>
+   </div>
 </div>
 
 <modal id="custom-modal-1">
@@ -34,6 +39,16 @@
             <button type="button" style ="margin:0px 280px"
             (click)="closeModal('custom-modal-1');"
             class="btn btn-danger">End Call</button>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+
+
+<modal id="custom-modal-2">
+    <div class="modal">
+        <div class="modal-body" style="margin:30px 250px">
+            <app-register-lecture></app-register-lecture>
         </div>
     </div>
     <div class="modal-background"></div>

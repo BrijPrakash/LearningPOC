@@ -14,6 +14,7 @@ import { ModalComponent } from './directive/modal.component';
 import { FormsModule }    from '@angular/forms';
 import { NotifyModalComponent } from './notify-modal/notify-modal.component';
 import { VideoStreamingComponent } from './video-streaming/video-streaming.component';
+import { RegisterLectureComponent } from './register-lecture/register-lecture.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { VideoStreamingComponent } from './video-streaming/video-streaming.compo
     VideoCallingComponent,
     ModalComponent,
     NotifyModalComponent,
-    VideoStreamingComponent
+    VideoStreamingComponent,
+    RegisterLectureComponent
   ],
   imports: [
     BrowserModule,

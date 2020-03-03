@@ -16,11 +16,17 @@ export class GuestLectureComponent implements OnInit {
 
   openModal(id: string) {
     this.modalService.open(id);
-    this.showWebCam = true;
+    if(id === "custom-modal-1"){
+      this.showWebCam = true;
+    }
+   
 }
 
 closeModal(id: string) {
     this.modalService.close(id);
-    this.showWebCam = false;
+    if(id === "custom-modal-1"){
+      this.showWebCam = false;
+    }
+   
 }
 }
