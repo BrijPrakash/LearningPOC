@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="modal fade" id="notify-modal" role="dialog">
+    <div>
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" onclick="closeNotify()">&times;</button>
+                    <button type="button" class="close" style="margin:-22px" (click)="closeModal('notify-modal')">&times;</button>
                     <h4 class="modal-title">Notify</h4>
                 </div>
                 <div class="modal-body">
@@ -12,10 +12,12 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default btn-danger" onclick="closeNotify()" >Close</button>
-                    <button type="button" class="btn btn-default btn-success" onclick="closeNotify()" >Send</button>
+                    <button type="button" class="btn btn-default btn-danger" (click)="closeModal('notify-modal')" >Close</button>
+                    <button type="button" class="btn btn-default btn-success" (click)="closeModal('notify-modal')" >Send</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+

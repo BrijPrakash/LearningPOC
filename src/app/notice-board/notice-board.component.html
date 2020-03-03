@@ -42,7 +42,7 @@
         <div class="col-sm-8">
             <div class="row">
                 <div class="col-sm-1">
-                    <button class="btn btn-danger navbar-btn pull-right"  onclick="openNotify()">Notify</button>
+                    <button class="btn btn-danger navbar-btn pull-right"  (click)="openModal('notify-modal')">Notify</button>
                 </div>
                 <div class="col-sm-1">
                     <button class="btn btn-danger navbar-btn pull-right">Add</button>
@@ -61,7 +61,7 @@
                         <tr *ngFor="let section of tableData">
                             <th scope="row">{{section.id}}</th>
                             <td>{{section.name}}</td>
-                            <td><button class="btn btn-danger navbar-btn" onclick="openNotify()">Notify</button></td>
+                            <td><button class="btn btn-danger navbar-btn" (click)="openModal('notify-modal')">Notify</button></td>
                         </tr>
                     </tbody>
 
@@ -121,10 +121,7 @@
 <modal id="notify-modal">
     <div class="modal">
         <div class="modal-body" style="width: 683px;height: 547px; margin:30px 250px">
-            <app-notify-modal *ngIf=showWebCam></app-notify-modal>
-            <button type="button" style ="margin:0px 280px"
-            (click)="closeModal('notify-modal');"
-            class="btn btn-danger">End Call</button>
+            <app-notify-modal></app-notify-modal>
         </div>
     </div>
     <div class="modal-background"></div>
@@ -172,7 +169,7 @@
 
     var countries = ['Student 1', 'Student 2', 'Student 3', 'Student 4'];
      
-    function openNotify() {
+    function openModal() {
         $('#notify-modal').modal();
     }
 

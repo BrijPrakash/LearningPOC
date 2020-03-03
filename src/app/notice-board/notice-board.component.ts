@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import * as $ from 'jquery'
+import { ModalService } from '../services/modal-service';
 @Component({
   selector: 'app-notice-board',
   templateUrl: './notice-board.component.html',
@@ -147,7 +148,7 @@ export class NoticeBoardComponent implements OnInit, AfterViewInit {
     }];
   tableData = [];
   hide = true;
-  constructor() {
+  constructor(private modalService: ModalService) {
     this.tableData = this.details;
   }
 
@@ -174,4 +175,11 @@ export class NoticeBoardComponent implements OnInit, AfterViewInit {
     })
   }
 
+  openModal(id: string) {
+    this.modalService.open(id);
+}
+
+closeModal(id: string) {
+  this.modalService.close(id);
+}
 }
